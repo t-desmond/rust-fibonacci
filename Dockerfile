@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY . .
 
-RUN cargo build
+RUN cargo build --release
 
 FROM debian:bookworm-slim
 
-COPY --from=build /app/target/debug/fabinnoci /app/fabinnoci
+COPY --from=build /app/target/release/fabinnoci /app/fabinnoci
 
 CMD ["/app/fabinnoci"]
