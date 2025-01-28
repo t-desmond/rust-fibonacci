@@ -1,6 +1,6 @@
 use std::io;
 
-fn fib(n: u32) -> u32 {
+fn fib(n: usize) -> usize {
     if n == 0 {
         return 0;
     } else if n == 1 {
@@ -19,7 +19,7 @@ fn main() {
         .read_line(&mut num)
         .expect("failed to read the number");
 
-    let num: u32 = match num.trim().parse(){
+    let num: usize = match num.trim().parse(){
         Ok(num) => num,
         Err(_) => {
             println!("invalid input, enter a number");
